@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjrd5y1rknh2h"]
+
+[ext_resource type="Script" path="res://root.gd" id="1_ug4d7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aepit"]
+resource_local_to_scene = true
+radius = 14.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ncfsg"]
+resource_local_to_scene = true
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_ug4d7")
+
+[node name="Observer" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Observer"]
+shape = SubResource("CircleShape2D_aepit")
+
+[node name="AreaTarget" type="Area2D" parent="."]
+position = Vector2(-52, 11)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaTarget"]
+shape = SubResource("CircleShape2D_ncfsg")
+
+[node name="BodyTarget" type="CharacterBody2D" parent="."]
+position = Vector2(-50, -11)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BodyTarget"]
+shape = SubResource("CircleShape2D_ncfsg")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 491.0
+offset_top = 306.0
+offset_right = 770.0
+offset_bottom = 356.0
+text = "Please See Terminal for Output"
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-51, 0)
